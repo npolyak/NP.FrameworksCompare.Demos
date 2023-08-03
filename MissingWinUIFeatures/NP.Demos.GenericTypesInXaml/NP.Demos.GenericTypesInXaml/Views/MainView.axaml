@@ -1,0 +1,72 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:NP.Demos.GenericTypesInXaml.Views"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:generic_collections="clr-namespace:System.Collections.Generic;assembly=System.Collections"
+			 x:Class="NP.Demos.GenericTypesInXaml.Views.MainView">
+	<UserControl.Resources>
+		<generic_collections:List x:Key="TheList"
+								  x:TypeArguments="x:String">
+			<x:String>Str1</x:String>
+			<x:String>Str2</x:String>
+			<x:String>Str3</x:String>
+		</generic_collections:List>
+
+		<generic_collections:Dictionary x:Key="TheDictionary"
+									   x:TypeArguments="x:Int32, x:String">
+			<x:String x:Key="1">Str1</x:String>
+			<x:String x:Key="2">Str2</x:String>
+			<x:String x:Key="3">Str3</x:String>
+		</generic_collections:Dictionary>
+		
+		<views:MyGenericClass x:Key="MyInstance"
+							  x:TypeArguments="x:Int32, x:String"
+							  Val1="1"
+							  Val2="Hello World 1"/>
+		<generic_collections:List x:Key="ListOfGenericClasses"
+								  x:TypeArguments="views:MyGenericClass(x:Int32, x:String)">
+			<views:MyGenericClass x:TypeArguments="x:Int32, x:String" 
+								  Val1="2"
+								  Val2="Hello World 2"/>
+			<views:MyGenericClass x:TypeArguments="x:Int32, x:String"
+				  Val1="3"
+				  Val2="Hello World 3"/>
+		</generic_collections:List>
+
+		<DataTemplate x:Key="MyGenericClassDataTemplate">
+			<DataTemplate.DataType>
+				<x:Type TypeName="views:MyGenericClass" x:TypeArguments="x:Int32, x:String"/>
+			</DataTemplate.DataType>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="{Binding Path=Val1, StringFormat='Val1={0}'}"/>
+				<TextBlock Text="{Binding Path=Val2, StringFormat='Val2={0}'}"
+						   Margin="20,0,0,0"/>
+			</StackPanel>
+		</DataTemplate>
+	</UserControl.Resources>
+	<Grid RowDefinitions="*,*,*,*">
+		<ItemsControl ItemsSource="{Binding Source={StaticResource TheList}}"
+					  HorizontalAlignment="Center"
+					  VerticalAlignment="Center"/>
+
+		<ItemsControl ItemsSource="{Binding Source={StaticResource TheDictionary}}"
+					  Grid.Row="1"
+					  HorizontalAlignment="Center"
+					  VerticalAlignment="Center"/>
+
+		<ContentPresenter Content="{Binding Source={StaticResource MyInstance}}"
+						  ContentTemplate="{StaticResource MyGenericClassDataTemplate}"
+						  Grid.Row="2"
+						  HorizontalAlignment="Center"
+						  VerticalAlignment="Center"/>
+
+
+		<ItemsControl ItemsSource="{Binding Source={StaticResource ListOfGenericClasses}}"
+					  ItemTemplate="{StaticResource MyGenericClassDataTemplate}"
+					  Grid.Row="3"
+					  HorizontalAlignment="Center"
+					  VerticalAlignment="Center"/>
+	</Grid>
+</UserControl>
