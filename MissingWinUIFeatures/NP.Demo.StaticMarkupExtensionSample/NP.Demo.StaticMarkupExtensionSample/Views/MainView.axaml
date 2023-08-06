@@ -1,0 +1,32 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:NP.Demo.StaticMarkupExtensionSample.Views"
+             mc:Ignorable="d" 
+			 d:DesignWidth="800" 
+			 d:DesignHeight="450"
+             x:Class="NP.Demo.StaticMarkupExtensionSample.Views.MainView">
+
+	<StackPanel>
+		<CheckBox x:Name="VisibileInvisibleCheckBox"
+				  Content="Visibile/Invisible"
+				  HorizontalAlignment="Center"
+				  VerticalAlignment="Center"/>
+		<TextBlock Text="Hello World"
+				   HorizontalAlignment="Center"
+				   VerticalAlignment="Center"
+				   IsVisible="{Binding #VisibileInvisibleCheckBox.IsChecked, Converter={x:Static views:InverseBooleanConverter.Instance}}"/>
+
+
+		<Button Content="Click Me"	
+				Margin="0,30,0,0"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center"
+				views:CallMethodBehavior.TheRoutedEvent="{x:Static Button.ClickEvent}"
+				views:CallMethodBehavior.TargetObject="{Binding $parent[views:MainView]}"
+				views:CallMethodBehavior.MethodName="CreateAndShowDialog">
+			
+		</Button>
+	</StackPanel>
+</UserControl>
