@@ -1,0 +1,36 @@
+
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:NP.Demos.BindingSample.Views"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 Tag="Hello World"
+             x:Class="BindingSample.Views.MainView">
+
+	<Grid RowDefinitions="*, *">
+		<TextBlock Text="{Binding Path=Tag, RelativeSource={RelativeSource AncestorType=UserControl}, StringFormat='The UserControl.Tag is \'{0}\''}"
+				   VerticalAlignment="Center"
+				   HorizontalAlignment="Center"/>
+
+		<StackPanel HorizontalAlignment="Center"
+					VerticalAlignment="Center"
+					Grid.Row="1">
+			<CheckBox x:Name="CheckBox1"
+					  Content="CheckBox_1"/>
+
+			<CheckBox x:Name="CheckBox2"
+					  Content="CheckBox_2"/>
+
+			<CheckBox Content="CheckBox_1 &amp;&amp; CheckBox_2"
+					  IsEnabled="False">
+				<CheckBox.IsChecked>
+					<MultiBinding Converter="{x:Static views:BoolAndMultiValueConverter.Instance}">
+						<Binding Path="#CheckBox1.IsChecked"/>
+						<Binding Path="#CheckBox2.IsChecked"/>
+					</MultiBinding>
+				</CheckBox.IsChecked>
+			</CheckBox>
+		</StackPanel>
+	</Grid>
+</UserControl>
