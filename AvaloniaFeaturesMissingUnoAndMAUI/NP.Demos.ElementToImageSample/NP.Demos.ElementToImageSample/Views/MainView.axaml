@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="NP.Demos.ElementToImageSample.Views.MainView">
+	<Grid RowDefinitions="*,*, Auto">
+		<Grid VerticalAlignment="Stretch"
+			  HorizontalAlignment="Stretch">
+			<Grid x:Name="ThePanel"
+				  VerticalAlignment="Stretch"
+				  HorizontalAlignment="Stretch"
+				  Background="Aqua">
+				<StackPanel VerticalAlignment="Center"
+							HorizontalAlignment="Center">
+					<TextBlock Text="Hello World!"
+							   Foreground="Black"
+							   HorizontalAlignment="Center"
+							   VerticalAlignment="Center"/>
+					<Rectangle Width="50"
+							   Height="50"
+							   Fill="Red"
+							   Margin="0,30,0,0"
+							   HorizontalAlignment="Center"/>
+				</StackPanel>
+			</Grid>
+		</Grid>
+		<!--<Grid x:Name="TheImage"
+			  Width="200"
+			  Height="200"
+			  Grid.Row="1"
+			  HorizontalAlignment="Center"
+			  VerticalAlignment="Center"/>--> 
+
+		<Image x:Name="TheImage"
+			   Grid.Row="1"
+			   HorizontalAlignment="Stretch"
+			   VerticalAlignment="Stretch"/>
+		
+		<Button x:Name="RenderButton"
+				Content="Render"
+				Grid.Row="2"/>
+	</Grid>
+</UserControl>
