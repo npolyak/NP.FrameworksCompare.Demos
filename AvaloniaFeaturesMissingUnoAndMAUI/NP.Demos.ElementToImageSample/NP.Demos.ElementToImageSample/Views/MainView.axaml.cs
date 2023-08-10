@@ -49,7 +49,7 @@ public partial class MainView : UserControl
 
         //writeableBitmap.Save("MyFile1.png");
 
-        Bitmap b = new Bitmap(PixelFormats.Bgra8888, AlphaFormat.Unpremul, buff.Address, pixSize, dpi, buff.RowBytes);
+        Bitmap b = new Bitmap(renderTargetBitmap.Format.Value, AlphaFormat.Premul, buff.Address, pixSize, dpi, buff.RowBytes);
 
         //b.Save("MyFile2.png");
 
