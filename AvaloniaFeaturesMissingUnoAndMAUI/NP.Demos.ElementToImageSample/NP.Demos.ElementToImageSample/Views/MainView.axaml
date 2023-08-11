@@ -5,11 +5,14 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="NP.Demos.ElementToImageSample.Views.MainView">
 	<Grid RowDefinitions="*,*, Auto">
-		<Grid VerticalAlignment="Stretch"
-			  HorizontalAlignment="Stretch">
+		<Grid VerticalAlignment="Center"
+			  HorizontalAlignment="Center">
+			<!-- The part you want to display should be included in tightly fitting
+				 panel or control (otherwise, the image might turn out shifted so that only
+				 part of it will be visible) -->
 			<Grid x:Name="ThePanel"
-				  VerticalAlignment="Stretch"
-				  HorizontalAlignment="Stretch"
+				  Width="300"
+				  Height="300"
 				  Background="Aqua">
 				<StackPanel VerticalAlignment="Center"
 							HorizontalAlignment="Center">
@@ -22,20 +25,19 @@
 							   Fill="Red"
 							   Margin="0,30,0,0"
 							   HorizontalAlignment="Center"/>
+					<Button Content="My Button"/>
+					<ComboBox>
+						<ComboBoxItem Content="Hi"/>
+						<ComboBoxItem Content="Hello"/>
+					</ComboBox>
 				</StackPanel>
 			</Grid>
 		</Grid>
-		<!--<Grid x:Name="TheImage"
-			  Width="200"
-			  Height="200"
-			  Grid.Row="1"
-			  HorizontalAlignment="Center"
-			  VerticalAlignment="Center"/>--> 
 
 		<Image x:Name="TheImage"
 			   Grid.Row="1"
-			   HorizontalAlignment="Stretch"
-			   VerticalAlignment="Stretch"/>
+			   HorizontalAlignment="Center"
+			   VerticalAlignment="Center"/>
 		
 		<Button x:Name="RenderButton"
 				Content="Render"
