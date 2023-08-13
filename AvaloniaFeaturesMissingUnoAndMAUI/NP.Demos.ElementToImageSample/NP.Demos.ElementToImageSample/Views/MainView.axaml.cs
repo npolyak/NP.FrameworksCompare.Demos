@@ -49,5 +49,19 @@ public partial class MainView : UserControl
 
         TheImage.Stretch = Stretch.None;
         TheImage.Source = b;
+
+        ImageBrush imageBrush = 
+            new ImageBrush 
+            { 
+                Source = b, 
+                TileMode = TileMode.Tile, 
+                Stretch = Stretch.None,
+                 AlignmentX = AlignmentX.Left,
+                 AlignmentY = AlignmentY.Top,
+                 DestinationRect = 
+                     new RelativeRect(0, 0, 0.5, 1, RelativeUnit.Relative)
+            };
+
+        ImageBrushPanel.Background = imageBrush;
     }
 }

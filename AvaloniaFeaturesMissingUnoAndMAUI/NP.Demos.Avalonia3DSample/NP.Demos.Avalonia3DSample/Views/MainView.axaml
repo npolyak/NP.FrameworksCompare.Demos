@@ -1,0 +1,41 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="NP.Demos.Avalonia3DSample.Views.MainView">
+	<Grid RowDefinitions="*,*">
+		<StackPanel Grid.Row="1"
+					VerticalAlignment="Center">
+			<StackPanel Orientation="Horizontal" 
+						HorizontalAlignment="Center">
+				<TextBlock Text="Angle Y Slider: "/>
+				<Slider x:Name="AngleYSlider"
+						Width="200"
+						Minimum="-180"
+						Maximum="180" />
+			</StackPanel>
+			<StackPanel Orientation="Horizontal"
+						HorizontalAlignment="Center">
+				<TextBlock Text="Angle Z Slider: "/>
+				<Slider x:Name="AngleZSlider"
+						Width="200"
+						Minimum="-180"
+						Maximum="180" />
+			</StackPanel>
+		</StackPanel>
+		<Border Background="LightCyan"
+				Height="150"
+				Width="150">
+			<Button Content="TheButton"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center">
+			</Button>
+			<Border.RenderTransform>
+				<Rotate3DTransform Depth="100" 
+								   AngleY="{Binding #AngleYSlider.Value}"
+								   AngleZ="{Binding #AngleZSlider.Value}" />
+			</Border.RenderTransform>
+		</Border>
+	</Grid>
+</UserControl>

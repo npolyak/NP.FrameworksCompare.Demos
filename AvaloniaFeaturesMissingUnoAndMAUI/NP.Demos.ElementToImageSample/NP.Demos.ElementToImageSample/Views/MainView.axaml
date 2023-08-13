@@ -4,15 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="NP.Demos.ElementToImageSample.Views.MainView">
-	<Grid RowDefinitions="*,*, Auto">
+	<Grid RowDefinitions="*,*,*,Auto">
 		<Grid VerticalAlignment="Center"
 			  HorizontalAlignment="Center">
 			<!-- The part you want to display should be included in tightly fitting
 				 panel or control (otherwise, the image might turn out shifted so that only
 				 part of it will be visible) -->
 			<Grid x:Name="ThePanel"
-				  Width="300"
-				  Height="300"
+				  Width="200"
+				  Height="200"
 				  Background="Aqua">
 				<StackPanel VerticalAlignment="Center"
 							HorizontalAlignment="Center">
@@ -38,9 +38,16 @@
 			   Grid.Row="1"
 			   HorizontalAlignment="Center"
 			   VerticalAlignment="Center"/>
+
+		<Grid x:Name="ImageBrushPanel"
+			  Grid.Row="2"
+			  Width="400"
+			  Height="200"
+			  HorizontalAlignment="Stretch"
+			  VerticalAlignment="Stretch"/>
 		
 		<Button x:Name="RenderButton"
 				Content="Render"
-				Grid.Row="2"/>
+				Grid.Row="3"/>
 	</Grid>
 </UserControl>
