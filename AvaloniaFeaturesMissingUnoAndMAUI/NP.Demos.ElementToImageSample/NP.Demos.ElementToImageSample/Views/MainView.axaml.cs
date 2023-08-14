@@ -42,9 +42,9 @@ public partial class MainView : UserControl
             (
                 renderTargetBitmap.Format.Value, 
                 AlphaFormat.Premul, 
-                buff.Address, 
-                pixSize, 
+                buff.Address,                 pixSize, 
                 dpi, 
+
                 buff.RowBytes);
 
         TheImage.Stretch = Stretch.None;
@@ -54,7 +54,7 @@ public partial class MainView : UserControl
             new ImageBrush 
             { 
                 Source = b, 
-                TileMode = TileMode.Tile, 
+                TileMode = TileMode.FlipX,
                 Stretch = Stretch.None,
                  AlignmentX = AlignmentX.Left,
                  AlignmentY = AlignmentY.Top,
@@ -63,5 +63,15 @@ public partial class MainView : UserControl
             };
 
         ImageBrushPanel.Background = imageBrush;
+
+        VisualBrushPanel.Background = new VisualBrush
+        { 
+            AlignmentX = AlignmentX.Left,
+            AlignmentY = AlignmentY.Top,
+            TileMode = TileMode.FlipX,
+            Visual = ThePanel,
+            DestinationRect =
+                     new RelativeRect(0, 0, 0.5, 1, RelativeUnit.Relative)
+        };
     }
 }

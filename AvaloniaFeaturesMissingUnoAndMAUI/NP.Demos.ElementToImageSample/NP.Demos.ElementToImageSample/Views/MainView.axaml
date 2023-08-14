@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="NP.Demos.ElementToImageSample.Views.MainView">
-	<Grid RowDefinitions="*,*,*,Auto">
+	<Grid RowDefinitions="*,*,*,*,Auto">
 		<Grid VerticalAlignment="Center"
 			  HorizontalAlignment="Center">
 			<!-- The part you want to display should be included in tightly fitting
@@ -45,9 +45,16 @@
 			  Height="200"
 			  HorizontalAlignment="Stretch"
 			  VerticalAlignment="Stretch"/>
+
+		<Grid x:Name="VisualBrushPanel"
+			  Grid.Row="3"
+			  Width="400"
+			  Height="200"
+			  HorizontalAlignment="Stretch"
+			  VerticalAlignment="Stretch"/>
 		
 		<Button x:Name="RenderButton"
 				Content="Render"
-				Grid.Row="3"/>
+				Grid.Row="4"/>
 	</Grid>
 </UserControl>
