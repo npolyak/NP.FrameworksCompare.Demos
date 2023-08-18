@@ -1,0 +1,53 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="NP.Demos.ClippingSample.Views.MainView">
+
+	<Grid RowDefinitions="*,*">
+		<Grid RowDefinitions="Auto,*">
+			<TextBlock Text="Opacity Mask:"
+					   HorizontalAlignment="Center"
+					   VerticalAlignment="Center"
+					   Margin="0,10,0,0"/>
+			<Image Source="/Assets/AvaloniaLogo.jpg"
+				   Grid.Row="1"
+				   Width="300"
+				   Height="300"
+				   HorizontalAlignment="Center"
+				   VerticalAlignment="Top">
+				<Image.OpacityMask>
+					<LinearGradientBrush StartPoint="0%,0%"
+										 EndPoint="75%,75%">
+						<LinearGradientBrush.GradientStops>
+							<GradientStop Offset="0"
+										  Color="Black"/>
+							<GradientStop Offset="1"
+										  Color="Transparent"/>
+						</LinearGradientBrush.GradientStops>
+					</LinearGradientBrush>
+				</Image.OpacityMask>
+			</Image>
+		</Grid>
+		<Grid RowDefinitions="Auto,*"
+			  Grid.Row="1">
+			<TextBlock Text="Clipping:"
+					   HorizontalAlignment="Center"
+					   VerticalAlignment="Center"
+					   Margin="0,10,0,0"/>
+			<Image Source="/Assets/AvaloniaLogo.jpg"
+				   Grid.Row="1"
+				   Width="300"
+				   Height="300"
+				   HorizontalAlignment="Center"
+				   VerticalAlignment="Top">
+				<Image.Clip>
+					<EllipseGeometry Center="150,150"
+									 RadiusX="70"
+									 RadiusY="125"/>
+				</Image.Clip>
+			</Image>
+		</Grid>
+	</Grid>
+</UserControl>
