@@ -6,7 +6,7 @@
              x:Class="NP.Demos.BlurSample.Views.MainView">
 	<Grid RowDefinitions="*,*">
 		<Grid.Effect>
-			<BlurEffect Radius="10"/>
+			<BlurEffect Radius="5"/>
 		</Grid.Effect>
 		<TextBlock Text="Welcome to Avalonia"
 				   HorizontalAlignment="Center"
