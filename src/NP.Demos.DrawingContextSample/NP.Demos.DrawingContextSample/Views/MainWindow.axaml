@@ -6,7 +6,6 @@
         xmlns:views="clr-namespace:NP.Demos.DrawingContextSample.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="NP.Demos.DrawingContextSample.Views.MainWindow"
-        Icon="/Assets/avalonia-logo.ico"
         Title="NP.Demos.DrawingContextSample"
 		Width="200"
 		Height="200">

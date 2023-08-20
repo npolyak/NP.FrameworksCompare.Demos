@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/NP.Demos.GenericTypesInXaml/.vs
+/NP.Demos.GenericTypesInXaml/NP.Demos.GenericTypesInXaml/bin/Debug/net7.0
+/NP.Demos.GenericTypesInXaml/NP.Demos.GenericTypesInXaml/obj/Debug/net7.0
+/NP.Demos.GenericTypesInXaml/NP.Demos.GenericTypesInXaml/obj
+/NP.Demos.GenericTypesInXaml

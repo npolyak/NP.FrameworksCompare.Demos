@@ -42,9 +42,9 @@ public partial class MainView : UserControl
             (
                 renderTargetBitmap.Format.Value, 
                 AlphaFormat.Premul, 
-                buff.Address,                 pixSize, 
+                buff.Address,                 
+                pixSize, 
                 dpi, 
-
                 buff.RowBytes);
 
         TheImage.Stretch = Stretch.None;
@@ -55,7 +55,7 @@ public partial class MainView : UserControl
             { 
                 Source = b, 
                 TileMode = TileMode.FlipX,
-                Stretch = Stretch.None,
+                Stretch = Stretch.Uniform,
                  AlignmentX = AlignmentX.Left,
                  AlignmentY = AlignmentY.Top,
                  DestinationRect = 
