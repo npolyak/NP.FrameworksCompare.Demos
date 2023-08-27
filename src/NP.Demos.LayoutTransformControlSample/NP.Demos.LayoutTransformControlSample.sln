@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.33927.210
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NP.Demos.LayoutTransformControlSample", "NP.Demos.LayoutTransformControlSample\NP.Demos.LayoutTransformControlSample.csproj", "{B9BA56CF-18A0-4EDD-8D91-20BC3DE7D34C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NP.Demos.LayoutTransformControlSample.Android", "NP.Demos.LayoutTransformControlSample.Android\NP.Demos.LayoutTransformControlSample.Android.csproj", "{92F03D3E-1B84-4AB5-86D6-036C857A36B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NP.Demos.LayoutTransformControlSample.Desktop", "NP.Demos.LayoutTransformControlSample.Desktop\NP.Demos.LayoutTransformControlSample.Desktop.csproj", "{804076EB-F520-40E0-8F8C-D8885C540EA5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NP.Demos.LayoutTransformControlSample.Browser", "NP.Demos.LayoutTransformControlSample.Browser\NP.Demos.LayoutTransformControlSample.Browser.csproj", "{F82B25E4-1963-4494-A8AD-AE42449F7301}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9BA56CF-18A0-4EDD-8D91-20BC3DE7D34C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9BA56CF-18A0-4EDD-8D91-20BC3DE7D34C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9BA56CF-18A0-4EDD-8D91-20BC3DE7D34C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9BA56CF-18A0-4EDD-8D91-20BC3DE7D34C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92F03D3E-1B84-4AB5-86D6-036C857A36B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92F03D3E-1B84-4AB5-86D6-036C857A36B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92F03D3E-1B84-4AB5-86D6-036C857A36B7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{92F03D3E-1B84-4AB5-86D6-036C857A36B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92F03D3E-1B84-4AB5-86D6-036C857A36B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92F03D3E-1B84-4AB5-86D6-036C857A36B7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{804076EB-F520-40E0-8F8C-D8885C540EA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{804076EB-F520-40E0-8F8C-D8885C540EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{804076EB-F520-40E0-8F8C-D8885C540EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{804076EB-F520-40E0-8F8C-D8885C540EA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F82B25E4-1963-4494-A8AD-AE42449F7301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F82B25E4-1963-4494-A8AD-AE42449F7301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F82B25E4-1963-4494-A8AD-AE42449F7301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F82B25E4-1963-4494-A8AD-AE42449F7301}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45AB8C7D-6ACD-4AA9-AAE3-F03B77414E9B}
+	EndGlobalSection
+EndGlobal
